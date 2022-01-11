@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { InstitutionComponent } from './pages/institution/institution.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
+    InstitutionComponent,
   ],
   imports: [
     BrowserModule,
