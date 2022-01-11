@@ -3,13 +3,16 @@
 }
 #info {
     background-color: #8BAEB0;
-    height: 15cm;
+    height: 25cm;
 }
 .name {
     background-color: #8BAEB0;
 }
 .certificate {
     background-color: #8BAEB0;
+}
+button {
+    border-radius: 10%;
 }
 #create {
     margin: 0.3cm;
