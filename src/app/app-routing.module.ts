@@ -6,12 +6,18 @@ import { HomeComponent } from './pages/home/home.component';
 import { NavComponent } from './pages/nav/nav.component';
 import { UserpageComponent } from './pages/userpage/userpage.component';
 
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+
 const routes: Routes = [
   { path: 'nav', component: NavComponent},
   { path: 'home', component: HomeComponent},
   { path: 'about', component: AboutComponent },
   { path: 'userpage', component: UserpageComponent},
   { path: 'footer', component: FooterComponent },
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: '**', component:LoginComponent}
   //  { path: 'Notfound', component: NotComponent},
 ];
 
@@ -28,4 +34,5 @@ export const routingComponents = [
   AboutComponent,
   UserpageComponent,
   FooterComponent,
+  
 ]
