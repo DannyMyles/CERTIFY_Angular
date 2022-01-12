@@ -8,21 +8,25 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  private baseUrl = 'http://localhost:8080/api/';
+  private baseUrl = 'http://127.0.0.1:8000';
 
   constructor(private http: HttpClient) { }
 
 
 
-  getUser(): Observable<User> {
-    return this.http.get<User>(`${this.baseUrl}/user`);
+  getUser(val: any): Observable<User> {
+    return this.http.get<User>(`${this.baseUrl}/learners/api/`+ val);
   }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.baseUrl}/users`);
+    return this.http.get<User[]>(`${this.baseUrl}/learners/api/`);
   }
 
-  getEmployer(): Observable<Employer> {
-    return this.http.get<Employer>(`${this.baseUrl}/employer`);
+  getEmployer(val: any): Observable<Employer> {
+    return this.http.get<Employer>(`${this.baseUrl}/api/employers/` + val);
+  }
+
+  getEmployers(): Observable<Employer[]> {
+    return this.http.get<Employer[]>(`${this.baseUrl}/api/employers/`);
   }
 }

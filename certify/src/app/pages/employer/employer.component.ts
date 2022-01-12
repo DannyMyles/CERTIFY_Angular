@@ -10,20 +10,33 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class EmployerComponent implements OnInit {
   employer!: Employer;
+  employers!:  Employer[]
   users!: User[];
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.getUsers();
-    this.getEmployer();
+    this.getEmployers()
   }
 
-  getEmployer(): void {
-    this.userService.getEmployer().subscribe(
+  getEmployer(item: { employerId: any; }): void {
+    this.userService.getEmployer(item.employerId).subscribe(
       (response: Employer) => {
         this.employer = response;
         console.log(this.employer);
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+
+  getEmployers(): void {
+    this.userService.getEmployers().subscribe(
+      (response: Employer[]) => {
+        this.employers = response;
+        console.log(this.employers);
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
@@ -49,10 +62,9 @@ export class EmployerComponent implements OnInit {
     console.log(key);
     const results: User[] = [];
     for (const user of this.users) {
-      if (user.firstname.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || user.email.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || user.phone !== -1
-      || user.lastname.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
+      if (user.learner_first_name.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || user.learner_reg_no !== -1
+      || user.learner_last_name.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
         results.push(user);
       }
     }

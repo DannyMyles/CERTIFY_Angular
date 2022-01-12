@@ -1,4 +1,13 @@
-<form class="form-inline my-2 my-lg-0">
-    <input type="search" (ngModelChange)="searchUser(key.value)" #key="ngModel" ngModel
-     name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search user..." required>
-</form>
+<div>
+    <form class="form-inline my-2 my-lg-0">
+        <input type="search" (ngModelChange)="searchUser(key.value)" #key="ngModel" ngModel
+         name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search user..." required>
+    </form>
+</div>
+<div class="row" >
+    <div class="col-md-6" *ngFor="let employer of employers">
+        <img src="{{employer.imageUrl}}" height="300" width="300">
+        <p><strong>{{employer.company_name}}</strong></p>     
+    </div>
+</div>
+

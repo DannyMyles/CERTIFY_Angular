@@ -14,17 +14,31 @@ import { UserService } from 'src/app/services/user.service';
 export class UserpageComponent implements OnInit {
 
   user!: User;
+  users!: User[];
 
   constructor(private userService: UserService) {}
 
-  ngOnInit() {
-    this.getUser();
+  ngOnInit(): void {
+    this.getUsers();
   }
 
-  getUser(): void {
-    this.userService.getUser().subscribe(
+  getUser(item: { learnerId: any; }): void {
+    this.userService.getUser(item.learnerId).subscribe(
       (response: User) => {
         this.user = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+
+
+  getUsers(): void {
+    this.userService.getUsers().subscribe(
+      (response: User[]) => {
+        this.users = response;
+        console.log(this.users);
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
