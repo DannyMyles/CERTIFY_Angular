@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
+import { InstitutionComponent } from './pages/institution/institution.component';
 import { NavComponent } from './pages/nav/nav.component';
 import { UserpageComponent } from './pages/userpage/userpage.component';
 
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'userpage', component: UserpageComponent},
   { path: 'footer', component: FooterComponent },
+  { path: 'institution', component: InstitutionComponent },
   //  { path: 'Notfound', component: NotComponent},
 ];
 
@@ -28,4 +30,5 @@ export const routingComponents = [
   AboutComponent,
   UserpageComponent,
   FooterComponent,
+  InstitutionComponent,
 ]
