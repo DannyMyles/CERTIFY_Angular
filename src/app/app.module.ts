@@ -12,14 +12,13 @@ import { InstitutionComponent } from './pages/institution/institution.component'
   declarations: [
     AppComponent,
     routingComponents,
-    InstitutionComponent,
+    InstitutionComponent, 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-
   ],
   providers: [
     UserService
